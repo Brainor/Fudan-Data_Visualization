@@ -37,12 +37,8 @@ p6, = plt.plot(country_index, predictions[:,0],marker='o', linestyle = 'None')
 
 def animate(i):
     p6.set_ydata(predictions[:,i])
+    plt.title("Day " + str(i+1))
     return  p6,
-
-# def initial():
-#     p6.set_ydata(predictions[:,0])
-#     return p6, 
-
-ani = animation.FuncAnimation(fig=fig6,func=animate,frames=84,interval=20,blit=False)
-# ani = animation.FuncAnimation(fig=fig6,func=animate,frames=84,init_func=initial,interval=20,blit=False)
+ani = animation.FuncAnimation(fig=fig6,func=animate,frames=84,interval=100,blit=False)
+ani_ax.set_xlabel("Country")
 plt.show()
